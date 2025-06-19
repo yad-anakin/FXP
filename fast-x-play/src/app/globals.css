@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 240 5.9% 10%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 24 100% 50%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 30 100% 50%;
+    
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 30 100% 50%;
+    --primary-foreground: 240 10% 3.9%;
+    
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 30 100% 50%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 30 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[#e2e8f0] dark:border-[#1f2937];
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Kurdish font styling */
+  .ku {
+    font-family: var(--font-noto-kufi), sans-serif;
+  }
+  
+  /* Custom scrollbar for gaming vibe */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+  }
+
+  /* Animation classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+
+  .animate-rotate {
+    animation: rotate 10s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Button glowing styles */
+@layer components {
+  .btn-glow-orange {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-glow-orange:hover {
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .btn-glow-blue {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-glow-blue:hover {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .btn-glow-gradient {
+    background-image: linear-gradient(to right, #FF6B00, #00F0FF, #FF6B00);
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-glow-gradient:hover {
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+/* Additional animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px 5px rgba(255, 107, 0, 0.3), 0 0 20px 10px rgba(0, 240, 255, 0.1);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 15px 8px rgba(255, 107, 0, 0.5), 0 0 30px 15px rgba(0, 240, 255, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

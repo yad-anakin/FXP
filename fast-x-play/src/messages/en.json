@@ -1,0 +1,29 @@
+{
+  "navigation": {
+    "home": "Home",
+    "games": "Games",
+    "about": "About Us",
+    "contact": "Contact",
+    "news": "News"
+  },
+  "hero": {
+    "title": "Fast X Play Studio",
+    "subtitle": "Kurdish Gaming Innovation",
+    "description": "Creating immersive gaming experiences with a touch of Kurdish culture",
+    "cta": "Explore Our Games"
+  },
+  "footer": {
+    "rights": "© 2025 Fast X Play. All Rights Reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "language": {
+    "en": "English",
+    "ku": "Kurdish",
+    "ar": "Arabic"
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  }
+} 
